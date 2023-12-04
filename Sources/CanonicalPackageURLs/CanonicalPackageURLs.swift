@@ -21,9 +21,12 @@ struct CanonicalPackageURL: Equatable {
         var description: String { rawValue }
         var matcher: String {
             switch self {
-                case .gitAt: rawValue
-                case .http: rawValue + "://"
-                case .https: rawValue + "://"
+                case .gitAt:
+                    return rawValue
+                case .http:
+                    return rawValue + "://"
+                case .https:
+                    return rawValue + "://"
             }
         }
     }
