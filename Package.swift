@@ -11,7 +11,7 @@ let package = Package(
             targets: ["CanonicalPackageURLs"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-parsing", revision: "0.12.0")
+        .package(url: "https://github.com/pointfreeco/swift-parsing.git", from: "0.12.0")
     ],
     targets: [
         .target(
