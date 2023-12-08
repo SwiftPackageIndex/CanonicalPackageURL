@@ -3,10 +3,10 @@
     {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-case-paths",
+      "location" : "https://github.com/pointfreeco/swift-case-paths.git",
       "state" : {
-        "revision" : "a5521dde99570789d8cb7c43e51418d7cd1a87ca",
-        "version" : "1.1.2"
+        "branch" : "1.0.0",
+        "revision" : "5da6989aae464f324eef5c5b52bdb7974725ab81"
       }
     },
     {
@@ -16,15 +16,6 @@
       "state" : {
         "revision" : "a0e7d73f462c1c38c59dc40a3969ac40cea42950",
         "version" : "0.13.0"
-      }
-    },
-    {
-      "identity" : "swift-syntax",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-syntax.git",
-      "state" : {
-        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
-        "version" : "509.0.2"
       }
     },
     {
