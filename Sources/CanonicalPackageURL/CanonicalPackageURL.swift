@@ -1,12 +1,12 @@
 import Parsing
 
 
-struct CanonicalPackageURL: Equatable {
-    var prefix: Prefix
-    var hostname: String
-    var path: String
+public struct CanonicalPackageURL: Equatable {
+    public var prefix: Prefix
+    public var hostname: String
+    public var path: String
 
-    enum Prefix: String, CustomStringConvertible {
+    public enum Prefix: String, CustomStringConvertible {
         case gitAt = "git@"
         case http = "http"
         case https = "https"
@@ -18,7 +18,7 @@ struct CanonicalPackageURL: Equatable {
             }
             .map { _ in prefix }
         }
-        var description: String { rawValue }
+        public var description: String { rawValue }
         var matcher: String {
             switch self {
                 case .gitAt:
