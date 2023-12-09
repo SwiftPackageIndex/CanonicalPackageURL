@@ -1,5 +1,5 @@
 import XCTest
-@testable import CanonicalPackageURLs
+@testable import CanonicalPackageURL
 
 
 typealias Prefix = CanonicalPackageURL.Prefix

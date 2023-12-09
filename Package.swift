@@ -3,12 +3,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "CanonicalPackageURLs",
+    name: "CanonicalPackageURL",
     platforms: [.macOS(.v10_15)],
     products: [
         .library(
-            name: "CanonicalPackageURLs",
-            targets: ["CanonicalPackageURLs"]),
+            name: "CanonicalPackageURL",
+            targets: ["CanonicalPackageURL"]),
     ],
     dependencies: [
         // pin swift-case-paths to pre-macros, avoid pulling in swift-syntax, which causes link errors
@@ -17,11 +17,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CanonicalPackageURLs",
+            name: "CanonicalPackageURL",
             dependencies: [
                 .product(name: "Parsing", package: "swift-parsing")
             ]
         ),
-        .testTarget(name: "CanonicalPackageURLsTests", dependencies: ["CanonicalPackageURLs"]),
+        .testTarget(name: "CanonicalPackageURLTests", dependencies: ["CanonicalPackageURL"]),
     ]
 )
