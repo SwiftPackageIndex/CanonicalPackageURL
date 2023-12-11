@@ -24,4 +24,9 @@ final class PublicInterfaceTests: XCTestCase {
                        .init(prefix: .http, hostname: "github.com", path: "apple/swift-argument-parser"))
     }
 
+    func test_canonicalPath() throws {
+        XCTAssertEqual(CanonicalPackageURL("git@github.com:andtie/SequenceBuilder.git")?.canonicalPath,
+                       "andtie/sequencebuilder")
+    }
+
 }
