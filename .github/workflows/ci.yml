@@ -30,8 +30,6 @@ jobs:
         xcode: ['15.0', '14.3.1']
     steps:
       - uses: actions/checkout@v3
-      - run: git config --global user.email "me@example.com"
-      - run: git config --global user.name "Name"
       - name: Get swift version
         run: env DEVELOPER_DIR="/Applications/Xcode_${{ matrix.xcode }}.app" swift --version
       - name: Test
@@ -52,8 +50,6 @@ jobs:
       image: ${{ matrix.image }}
     steps:
       - uses: actions/checkout@v3
-      - run: git config --global user.email "me@example.com"
-      - run: git config --global user.name "Name"
       - name: Get swift version
         run: swift --version
       - name: Test
