@@ -31,6 +31,20 @@ public struct CanonicalPackageURL: Codable, Equatable {
         }
     }
 
+    public init(prefix: CanonicalPackageURL.Prefix, hostname: String, path: String) {
+        self.prefix = prefix
+        self.hostname = hostname
+        self.path = path
+    }
+
+    public init?(_ string: String) {
+        do {
+            self = try Self.parser.parse(string)
+        } catch {
+            return nil
+        }
+    }
+
     static var hostname: some Parser<Substring, String> {
         Parse {
             OneOf {
