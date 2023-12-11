@@ -20,6 +20,27 @@ public struct CanonicalPackageURL: Codable, Equatable {
     public var hostname: String
     public var path: String
 
+    public init(prefix: CanonicalPackageURL.Prefix, hostname: String, path: String) {
+        self.prefix = prefix
+        self.hostname = hostname
+        self.path = path
+    }
+
+    public init?(_ string: String) {
+        do {
+            self = try Self.parser.parse(string)
+        } catch {
+            return nil
+        }
+    }
+
+    public var canonicalPath: String { path.lowercased() }
+}
+
+
+//MARK: Prefix
+
+extension CanonicalPackageURL {
     public enum Prefix: String, Codable, CustomStringConvertible {
         case gitAt = "git@"
         case http = "http"
@@ -44,21 +65,12 @@ public struct CanonicalPackageURL: Codable, Equatable {
             }
         }
     }
+}
 
-    public init(prefix: CanonicalPackageURL.Prefix, hostname: String, path: String) {
-        self.prefix = prefix
-        self.hostname = hostname
-        self.path = path
-    }
 
-    public init?(_ string: String) {
-        do {
-            self = try Self.parser.parse(string)
-        } catch {
-            return nil
-        }
-    }
+//MARK: Parsers
 
+extension CanonicalPackageURL {
     static var hostname: some Parser<Substring, String> {
         Parse {
             OneOf {
