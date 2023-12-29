@@ -73,6 +73,10 @@ extension CanonicalPackageURL {
 extension CanonicalPackageURL {
     static var hostname: some Parser<Substring, String> {
         Parse {
+            Skip {
+                // skip leading slashes that might be left over from parsing malformed http:////host input
+                Optionally { Many { "/" } }
+            }
             OneOf {
                 PrefixUpTo(":")
                 PrefixUpTo("/")
