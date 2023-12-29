@@ -48,4 +48,20 @@ final class CanonicalPackageURLsTests: XCTestCase {
                        .init(prefix: .https, hostname: "gitee.com", path: "zexu007/Kingfisher"))
     }
 
+    func test_parser_malformedInput() throws {
+        // triple slash
+        XCTAssertEqual(try CanonicalPackageURL.parser.parse("https:///github.com/apple/swift-system.git"),
+                       .init(prefix: .https, hostname: "github.com", path: "apple/swift-system"))
+        XCTAssertEqual(try CanonicalPackageURL.parser.parse("http:///github.com/apple/swift-system.git"),
+                       .init(prefix: .http, hostname: "github.com", path: "apple/swift-system"))
+        // quadruple slash
+        XCTAssertEqual(try CanonicalPackageURL.parser.parse("https:////github.com/apple/swift-system.git"),
+                       .init(prefix: .https, hostname: "github.com", path: "apple/swift-system"))
+        XCTAssertEqual(try CanonicalPackageURL.parser.parse("http:////github.com/apple/swift-system.git"),
+                       .init(prefix: .http, hostname: "github.com", path: "apple/swift-system"))
+        // bad (but salvageable) git@ url
+        XCTAssertEqual(try CanonicalPackageURL.parser.parse("git@/github.com/apple/swift-system.git"),
+                       .init(prefix: .gitAt, hostname: "github.com", path: "apple/swift-system"))
+    }
+
 }
