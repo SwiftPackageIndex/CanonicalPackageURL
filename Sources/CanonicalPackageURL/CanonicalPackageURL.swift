@@ -15,7 +15,7 @@
 import Parsing
 
 
-public struct CanonicalPackageURL: Codable, Equatable {
+public struct CanonicalPackageURL: Codable, Equatable, Sendable {
     public var prefix: Prefix
     public var hostname: String
     public var path: String
@@ -41,7 +41,7 @@ public struct CanonicalPackageURL: Codable, Equatable {
 //MARK: Prefix
 
 extension CanonicalPackageURL {
-    public enum Prefix: String, Codable, CustomStringConvertible {
+    public enum Prefix: String, Codable, CustomStringConvertible, Sendable {
         case gitAt = "git@"
         case http = "http"
         case https = "https"
