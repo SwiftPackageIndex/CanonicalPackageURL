@@ -1,13 +1,12 @@
 {
-  "originHash" : "513a2a9670fe545a9ee8df5425329b90d36ab5dcf5495beed15d4dd87a280fd4",
   "pins" : [
     {
       "identity" : "swift-case-paths",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/swift-case-paths.git",
       "state" : {
-        "revision" : "19b7263bacb9751f151ec0c93ec816fe1ef67c7b",
-        "version" : "1.6.1"
+        "branch" : "1.0.0",
+        "revision" : "5da6989aae464f324eef5c5b52bdb7974725ab81"
       }
     },
     {
@@ -20,15 +19,6 @@
       }
     },
     {
-      "identity" : "swift-syntax",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-syntax",
-      "state" : {
-        "revision" : "0687f71944021d616d34d922343dcef086855920",
-        "version" : "600.0.1"
-      }
-    },
-    {
       "identity" : "xctest-dynamic-overlay",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
@@ -38,5 +28,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }
